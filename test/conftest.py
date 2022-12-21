@@ -10,6 +10,16 @@ def small_array() -> np.ndarray:
     return RNG.random(SMALL_ARRAY_SIZE)
 
 @pytest.fixture
-def check(small_array) -> float:
+def check1(small_array) -> float:
     """Print the sum of the array"""
     return np.sum(small_array)
+
+
+@pytest.fixture
+def another_small_array() -> np.ndarray:
+    return RNG.random(SMALL_ARRAY_SIZE)
+
+@pytest.fixture
+def check2(another_small_array) -> float:
+    """Print the sum of the array"""
+    return np.sum(another_small_array)
